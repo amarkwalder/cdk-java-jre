@@ -18,9 +18,9 @@ build:
 .PHONY: build
 
 tag:
-	-git tag -d 7
+	-git tag -d ${JAVA_VERSION_MAJOR} 
 	git tag -a -m "Java Version: ${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}" 7
-	git push origin 7
+	git push origin ${JAVA_VERSION_MAJOR}
 .PHONY: tag
 
 run: build
