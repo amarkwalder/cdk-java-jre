@@ -1,9 +1,9 @@
 FROM amarkwalder/cdk-base:0.1.0
 MAINTAINER André Markwalder <andre.markwalder@gmail.com>
 
-ENV     JAVA_VERSION_MAJOR=8 \
-	JAVA_VERSION_MINOR=102 \
-	JAVA_VERSION_BUILD=14 \
+ENV     JAVA_VERSION_MAJOR=7 \
+	JAVA_VERSION_MINOR=80 \
+	JAVA_VERSION_BUILD=15 \
 	JAVA_PACKAGE=server-jre
 ENV	DOWNLOAD_URL=http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/${JAVA_PACKAGE}-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz
 
