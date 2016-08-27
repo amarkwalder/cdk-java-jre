@@ -9,8 +9,7 @@ ENV	DOWNLOAD_URL=http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJO
 
 WORKDIR	/tmp
 
-RUN	echo ${DOWNLOAD_URL} && \
-	apk add --no-cache --update-cache curl && \
+RUN	apk add --no-cache --update-cache curl && \
 	curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" "${DOWNLOAD_URL}" | gunzip -c - | tar -xf - && \
 	mkdir -p /usr/lib/jvm/ && \
 	mv jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR}/jre /usr/lib/jvm/jre1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR}/ && \
