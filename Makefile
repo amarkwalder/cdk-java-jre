@@ -17,6 +17,12 @@ build:
 		.
 .PHONY: build
 
+tag:
+	-git tag -d 7
+	git tag -a -m "Java Version: ${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}" 7
+	git push origin 7
+.PHONY: tag
+
 run: build
 	docker run -it --rm amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
 .PHONY: run
