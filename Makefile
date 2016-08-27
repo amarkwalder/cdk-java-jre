@@ -18,9 +18,9 @@ build:
 .PHONY: build
 
 tag:
-        docker pull amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}
-        docker tag amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD} amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
-        docker push amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
+	docker pull amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}
+	docker tag amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD} amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
+	docker push amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
 .PHONY: tag
 
 run: build
