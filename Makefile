@@ -8,6 +8,7 @@ JAVA_VERSION_BUILD=14
 clean:
 	-docker rmi amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}
 	-docker rmi amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
+	-docker rmi amarkwalder/cdk-java-jre:latest
 .PHONY: clean
 
 build:
@@ -20,6 +21,7 @@ build:
 tag:
 	docker pull amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}
 	docker tag amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD} amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
+	docker tag amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD} amarkwalder/cdk-java-jre:latest
 	docker push amarkwalder/cdk-java-jre:${JAVA_VERSION_MAJOR}
 .PHONY: tag
 
