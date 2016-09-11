@@ -1,7 +1,7 @@
 FROM amarkwalder/cdk-base:0.1.0
 MAINTAINER André Markwalder <andre.markwalder@gmail.com>
 
-ENV     JAVA_VERSION_MAJOR=8 \
+ENV	JAVA_VERSION_MAJOR=8 \
 	JAVA_VERSION_MINOR=102 \
 	JAVA_VERSION_BUILD=14 \
 	JAVA_PACKAGE=server-jre
