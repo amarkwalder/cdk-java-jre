@@ -13,7 +13,7 @@ RUN	curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" "${DOWNLOAD_
 	mkdir -p /usr/lib/jvm/ && \
 	mv jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR}/jre /usr/lib/jvm/jre1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR}/ && \
 	rm -rf jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} && \
-	ln -s /usr/lib/jvm/jre1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /usr/lib/jvm/jre && \
+	ln -s /usr/lib/jvm/jre1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /usr/lib/jvm/jre
 
 WORKDIR	/
 
