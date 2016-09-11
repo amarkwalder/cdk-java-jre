@@ -1,4 +1,4 @@
-FROM amarkwalder/cdk-base:0.1.0
+FROM amarkwalder/cdk-base:0.1.1
 MAINTAINER André Markwalder <andre.markwalder@gmail.com>
 
 ENV     JAVA_VERSION_MAJOR=8 \
@@ -9,13 +9,11 @@ ENV	DOWNLOAD_URL=http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJO
 
 WORKDIR	/tmp
 
-RUN	apk add --no-cache --update-cache curl && \
-	curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" "${DOWNLOAD_URL}" | gunzip -c - | tar -xf - && \
+RUN	curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" "${DOWNLOAD_URL}" | gunzip -c - | tar -xf - && \
 	mkdir -p /usr/lib/jvm/ && \
 	mv jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR}/jre /usr/lib/jvm/jre1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR}/ && \
 	rm -rf jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} && \
 	ln -s /usr/lib/jvm/jre1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /usr/lib/jvm/jre && \
-	apk del curl
 
 WORKDIR	/
 
